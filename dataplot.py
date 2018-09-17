@@ -30,8 +30,7 @@ def plot(dataframe):
 
         avg += ((dataframe.loc['1b. open (USD)', '{}-{}-{num:02d}'.format(year, month, num=day)]) -
                 (dataframe.loc['4b. close (USD)', '{}-{}-{num:02d}'.format(year, month, num=day)]))
-
-        day -= 1
+        day -= 1  # Substracts 1 from the day counter, until it reaches 1 (first day, last row)
 
     avg = avg / 30  # Calculate the average
     print(
